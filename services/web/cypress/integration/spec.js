@@ -17,3 +17,13 @@ describe("Sapper template app", () => {
       cy.url().should("include", "/blog");
     });
 });
+
+describe('Blog Posts', () => {
+    beforeEach(() => {
+      cy.visit('/blog')
+    });
+  
+    it('has the correct <h1>', () => {
+      cy.contains('h1', 'Great success!')
+    });
+});
