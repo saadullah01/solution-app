@@ -12,7 +12,9 @@
     "deploy": "run-s deploy:clean export deploy:firebase",
     "dev": "run-p dev:*",
     "dev:firebase": "npm run dev --prefix firebase",
-    "dev:sapper": "sapper dev"
+    "dev:sapper": "sapper dev",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "dependencies": {
     "compression": "^1.7.1",
