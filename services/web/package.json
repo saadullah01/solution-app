@@ -14,6 +14,9 @@
     "polka": "next",
     "sirv": "^1.0.0"
   },
+  "config": {
+    "unsafe-perm":true
+  },
   "devDependencies": {
     "sapper": "^0.28.0",
     "svelte": "^3.17.3",
