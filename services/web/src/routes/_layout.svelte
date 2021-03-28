@@ -14,6 +14,7 @@
 		box-sizing: border-box;
 	}
 </style>
+<UserObserver />
 <TailwindCSS />
 
 <Nav {segment}/>
