@@ -6,11 +6,17 @@
     let content;
   
     $: isPublishDisabled = !(title && content);
+
+    const publish = () => {
+      console.log(`Publishing...
+        Title: ${title}
+        Content: ${content}`);
+    };
 </script>
   
 <h1>Add new blog post</h1>
 <div class="mt-6">
-    <form>
+    <form on:click={publish}>
       <InputGroup 
       elementType="input" 
       label="Title" 
