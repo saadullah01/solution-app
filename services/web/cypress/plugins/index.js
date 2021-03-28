@@ -17,9 +17,10 @@
  */
 // eslint-disable-next-line no-unused-vars
 const rollupPreprocessor = require("@bahmutov/cy-rollup");
-  module.exports = (on, config) => {
-    on("file:preprocessor", rollupPreprocessor({
+const firestoreTasks = require("./firestore");
+module.exports = (on, config) => {
+  on("file:preprocessor", rollupPreprocessor({
       configFile: "cypress/rollup.config.js",
-    })
-  );
+  }));
+  on("task", firestoreTasks);
 };
