@@ -4,6 +4,8 @@
   
     let title;
     let content;
+    let successMessage;
+    let errorMessage;
   
     $: isPublishDisabled = !(title && content);
 
@@ -13,9 +15,9 @@
         title,
         content
       }).then(() => {
-        console.log("Success");
+        successMessage = "Successfully published your blog post.";
       }).catch((error) => {
-        console.error("Error", error);
+        errorMessage = "Oh no... there was an error publishing. Try again later.";
       });
     };
 </script>
@@ -43,4 +45,9 @@
       
       <Button disabled={isPublishDisabled}>Publish</Button>
     </form>
+    {#if successMessage}
+      <p class="mt-2 text-sm">{successMessage}</p>
+    {:else if errorMessage}
+      <p class="mt-2 text-sm text-red-600">{errorMessage}</p>
+    {/if}
 </div>
