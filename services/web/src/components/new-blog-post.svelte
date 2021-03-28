@@ -8,9 +8,15 @@
     $: isPublishDisabled = !(title && content);
 
     const publish = () => {
-      console.log(`Publishing...
-        Title: ${title}
-        Content: ${content}`);
+      const slug = title.replace(/\s/g, "-").toLowerCase();
+      window.db.collection("posts").doc(slug).set({
+        title,
+        content
+      }).then(() => {
+        console.log("Success");
+      }).catch((error) => {
+        console.error("Error", error);
+      });
     };
 </script>
   
