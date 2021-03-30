@@ -13,6 +13,7 @@
 </script>
 
 <script>
+	import marked from "marked";
 	export let post;
 </script>
 
@@ -60,7 +61,7 @@
   <h1>{post.title}</h1>
 
   <div class='content'>
-    {post.content}
+    {@html marked(post.content)}
   </div>
 {:else}
   <p>Loading blog post...</p>
