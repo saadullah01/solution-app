@@ -4,7 +4,8 @@ on:
   push:
     paths:
       - 'services/web/**'
-
+      - "!services/web/firebase/functions/**"
+      
 jobs:
   test:
     runs-on: ubuntu-latest
